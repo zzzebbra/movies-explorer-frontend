@@ -1,0 +1,24 @@
+.portfolio__link {
+  display: flex;
+  border-bottom: 1px solid #E8E8E8;
+  padding: 0;
+  justify-content: space-between;
+  width: 1140px;
+  border-top: none;
+  background: #fff;
+  border-left: none;
+  border-right: none;
+}
+
+.portfolio__link:last-of-type {
+  border: none;
+  padding: 0;
+}
+
+.portfolio__link:hover {
+  cursor: pointer;
+}
+
+.portfolio__link:focus {
+  outline: none;
+}

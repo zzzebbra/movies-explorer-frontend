@@ -1,0 +1,13 @@
+.navtab__button {
+  height: 36px;
+  width: 96px;
+  border-radius: 10px;
+  border: none;
+  background: #E8E8E8;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0px;
+}

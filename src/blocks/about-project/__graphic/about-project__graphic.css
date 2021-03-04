@@ -1,0 +1,7 @@
+.about-project__graphic {
+  display: flex;
+  max-width: 1140px;
+  margin: 110px auto 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

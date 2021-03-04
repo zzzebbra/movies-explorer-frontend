@@ -1,0 +1,9 @@
+.footer__copyright-link {
+  display: inline-block;
+  margin: 0 20px 0 0;
+  text-decoration: none;
+}
+
+.footer__copyright-link:last-of-type {
+  margin: 0;
+}

@@ -1,0 +1,5 @@
+.tech__description {
+  display: flex;
+  flex-direction: column;
+  margin: 90px 0 100px 0;
+}
