@@ -1,0 +1,8 @@
+.navtab__link {
+  text-decoration: none;
+  margin: 0 20px 0 0;
+}
+
+.navtab__link:last-of-type {
+  margin: 0;
+}

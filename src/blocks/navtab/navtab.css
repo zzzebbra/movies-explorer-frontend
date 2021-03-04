@@ -1,0 +1,7 @@
+.navtab {
+  max-width: 310px;
+  display: flex;
+  justify-content: space-between;
+  margin: 151px 0 30px 0;
+}
+

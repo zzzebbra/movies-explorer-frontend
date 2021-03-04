@@ -1,0 +1,8 @@
+.about-project__duration-front {
+  height: 36px;
+  width: 228px;
+  background: #2BE080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

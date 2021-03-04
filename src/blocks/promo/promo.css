@@ -1,0 +1,12 @@
+.promo {
+  margin: 0 auto;
+  background-color: #F5F5F5;
+  height: 493px;
+  max-width: 1200px;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

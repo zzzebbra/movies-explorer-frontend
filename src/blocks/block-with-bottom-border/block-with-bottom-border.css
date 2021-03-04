@@ -1,0 +1,5 @@
+.block-with-bottom-border {
+  max-width: 1140px;
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+}
