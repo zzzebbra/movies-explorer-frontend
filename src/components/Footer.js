@@ -12,6 +12,9 @@ function Footer() {
           <a href="#" className="footer__copyright-link"><p className="footer__copyright-text">Яндекс.Практикум</p></a>
           <a href="#" className="footer__copyright-link"><p className="footer__copyright-text">Github</p></a>
           <a href="#" className="footer__copyright-link"><p className="footer__copyright-text">Facebook</p></a>
+          <a href="#" className="footer__copyright-link"><p className="footer__copyright-text">Яндекс.Практикум</p></a>
+          <a href="#" className="footer__copyright-link"><p className="footer__copyright-text">Github</p></a>
+          <a href="#" className="footer__copyright-link"><p className="footer__copyright-text">Facebook</p></a>
         </ul>
       </div>
     </section>
