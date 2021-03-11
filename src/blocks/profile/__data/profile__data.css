@@ -1,0 +1,9 @@
+.profile__data {
+  margin: 0 auto;
+  display: flex;
+  max-width: 410px;
+  max-height: 62px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}

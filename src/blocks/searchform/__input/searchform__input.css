@@ -1,0 +1,16 @@
+.searchform__input {
+  color: #A0A0A0;
+  border: none;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 34px;
+  width: 100%;
+  text-align: center;
+  height: 64px;
+}
+
+.searchform__input:focus {
+  outline: none;
+}

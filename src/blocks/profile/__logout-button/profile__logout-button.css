@@ -1,0 +1,14 @@
+.profile__logout-button {
+  font-family: "Inter", "Arial", sans-serif;
+  color: #EE3465;
+  border: none;
+  background-color: #fff;
+}
+
+.profile__logout-button:focus {
+  outline: none;
+}
+
+.profile__logout-button:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,18 @@
+.searchform__icon {
+  border: 1px solid #E8E8E8;
+  box-sizing: border-box;
+  border-radius: 48px;
+  background: url('../../../images/icon-search.svg');
+  background-repeat: no-repeat;
+  width: 34px;
+  height: 34px;
+  background-position: center;
+}
+
+.searchform__icon:focus {
+  outline: none;
+}
+
+.searchform__icon:hover {
+  cursor: pointer;
+}

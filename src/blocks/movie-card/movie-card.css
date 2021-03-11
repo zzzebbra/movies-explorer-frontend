@@ -1,0 +1,12 @@
+.movie-card {
+  height: 281px;
+  width: 364px;
+  background: #FDFDFD;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 290px 40px;
+  grid-template-rows: 202px 47px 32px;
+  align-items: center;
+  justify-content: space-between;
+}
