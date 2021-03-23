@@ -10,6 +10,7 @@ import CurrentUserContext from '../contexts/CurrentUserContext';
 import Movies from './Movies';
 import SavedMovies from './SavedMovies';
 import Profile from './Profile';
+import NotFound from './NotFound';
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState({});
@@ -18,7 +19,7 @@ function App() {
   return(
     <div className="page">
     <CurrentUserContext.Provider value={currentUser}>
-    {/* <Route exact path="/"> */}
+    {/* <Route exact path="/">
       <Header
       link="#"
       buttonLink="#"
@@ -26,12 +27,15 @@ function App() {
       text2="Сохранённые фильмы"
       buttonText="Войти"
       />
-    {/* </Route> */}
+    </Route> */}
       {/* <Main /> */}
       {/* <Movies /> */}
       {/* <SavedMovies /> */}
-      <Profile username="Виталий" email="pochta@yandex.ru"/>
-      <Footer />
+      {/* <Profile username="Виталий" email="pochta@yandex.ru"/> */}
+      {/* <Register /> */}
+      {/* <Login /> */}
+      <NotFound />
+      {/* <Footer /> */}
     </CurrentUserContext.Provider>
     </div>
   )

@@ -5,26 +5,27 @@ import { Link } from 'react-router-dom';
 function Register(props) {
   const welcome = "Добро пожаловать!";
   const buttonText = "Зарегистрироваться";
-  const registerText = "Уже зарегистрированы?";
+  const registerText = "Уже зарегистрированы? ";
   const linkText = "Войти";
 
   return(
     <section className="register">
       <img className="logo" src={logo} alt="Логотип"/>
       <h1 className="register__title">{welcome}</h1>
-      <form className="register__form">
-        <p className="register__form-text"></p>
-        <input className="register__form-input"></input>
-        <p className="register__form-error"></p>
-        <p className="register__form-text"></p>
-        <input className="register__form-input"></input>
-        <p className="register__form-error"></p>
-        <p className="register__form-text"></p>
-        <input className="register__form-input"></input>
-        <p className="register__form-error"></p>
-        <button className="register__form-submit-button">{buttonText}</button>
+      <form className="form">
+        <p className="form__input-text">Имя</p>
+        <input className="form__input"></input>
+        <p className="form__error"></p>
+        <p className="form__input-text">E-mail</p>
+        <input className="form__input"></input>
+        <p className="form__error"></p>
+        <p className="form__input-text">Пароль</p>
+        <input className="form__input"></input>
+        <p className="form__error">Что-то пошло не так...</p>
+        <button className="form__submit-button">{buttonText}</button>
+        <p className="form__text">{registerText}<Link to="#" className="form__link">{linkText}</Link></p>
       </form>
-      <p className="register__text">{registerText}</p><Link to="#" className="register__login-link">{linkText}</Link>
+
     </section>
   )
 }

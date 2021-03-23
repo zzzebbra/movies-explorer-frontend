@@ -1,0 +1,15 @@
+.not-found__button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 184px 0 60px 0;
+}
+
+.not-found__button:active {
+  border: none;
+  outline: none;
+}
+
+.not-found__button:hover {
+  cursor: pointer;
+}
