@@ -8,3 +8,10 @@
   color: #FF6838;
   text-decoration: none;
 }
+
+@media screen and (max-width) {
+  .not-found__link {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

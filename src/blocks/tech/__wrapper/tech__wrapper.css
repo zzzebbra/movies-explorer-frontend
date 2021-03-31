@@ -5,3 +5,15 @@
   justify-content: center;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 768px) {
+  .tech__wrapper {
+    max-width: 668px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .tech__wrapper {
+    max-width: 284px;
+  }
+}

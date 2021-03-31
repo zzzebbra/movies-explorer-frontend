@@ -4,3 +4,17 @@
   background-color: #FFFFFF;
   padding: 110px 0;
 }
+
+@media screen and (max-width: 768px) {
+  .about-project {
+    max-width: 768px;
+    padding: 90px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about-project {
+    max-width: 320px;
+    padding: 70px 0;
+  }
+}

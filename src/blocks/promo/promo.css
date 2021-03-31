@@ -10,3 +10,17 @@
   align-items: center;
   flex-direction: column;
 }
+
+@media screen and (max-width: 768px) {
+  .promo {
+    max-width: 728px;
+    height: 834px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .promo {
+    max-width: 292px;
+    height: 286px;
+  }
+}

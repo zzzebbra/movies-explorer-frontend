@@ -9,3 +9,18 @@
   color: #000;
   margin: 0 0 26px 0;
 }
+
+@media screen and (max-width: 768px) {
+  .about-me__occupation {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 20px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about-me__occupation {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}

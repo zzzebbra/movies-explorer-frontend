@@ -1,4 +1,4 @@
-.promo__title{
+.promo__title {
   max-width: 730px;
   font-family: "Inter", "Arial", sans-serif;
   font-size: 50px;
@@ -8,4 +8,22 @@
   letter-spacing: -0.04em;
   text-align: center;
   margin: 160px 0 0 0;
+}
+
+@media screen and (max-width: 768px) {
+  .promo__title {
+    max-width: 680px;
+    font-size: 40px;
+    line-height: 52px;
+    margin: 350px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .promo__title {
+    font-size: 29px;
+    line-height: 37px;
+    max-width: 292px;
+    margin: 220px 0 0 0;
+  }
 }

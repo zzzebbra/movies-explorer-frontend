@@ -1,3 +1,15 @@
 .about-me__text {
   max-width: 600px;
 }
+
+@media screen and (max-width: 768px) {
+  .about-me__text {
+    max-width: 364px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about-me__text {
+    max-width: 292px;
+  }
+}

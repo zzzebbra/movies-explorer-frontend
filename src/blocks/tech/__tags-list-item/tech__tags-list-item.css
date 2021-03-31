@@ -17,3 +17,11 @@
 .tech__tags-list-item:last-of-type {
   margin: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .tech__tags-list-item {
+    width: 84px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

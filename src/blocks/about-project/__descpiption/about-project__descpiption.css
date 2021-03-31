@@ -3,3 +3,15 @@
   display: flex;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 768px) {
+  .about-project__descpiption {
+    max-width: 668px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about-project__descpiption {
+    max-width: 284px;
+  }
+}

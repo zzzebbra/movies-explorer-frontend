@@ -14,12 +14,16 @@ import NotFound from './NotFound';
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState({});
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
+  function handleLoggedIn() {
+    setIsLoggedIn(true);
+  }
 
   return(
     <div className="page">
     <CurrentUserContext.Provider value={currentUser}>
-    {/* <Route exact path="/">
+    <Route exact path="/">
       <Header
       link="#"
       buttonLink="#"
@@ -27,15 +31,15 @@ function App() {
       text2="Сохранённые фильмы"
       buttonText="Войти"
       />
-    </Route> */}
-      {/* <Main /> */}
+    </Route>
+      <Main />
       {/* <Movies /> */}
       {/* <SavedMovies /> */}
       {/* <Profile username="Виталий" email="pochta@yandex.ru"/> */}
       {/* <Register /> */}
       {/* <Login /> */}
-      <NotFound />
-      {/* <Footer /> */}
+      {/* <NotFound /> */}
+      <Footer />
     </CurrentUserContext.Provider>
     </div>
   )

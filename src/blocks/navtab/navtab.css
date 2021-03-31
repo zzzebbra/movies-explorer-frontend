@@ -5,3 +5,14 @@
   margin: 151px 0 30px 0;
 }
 
+@media screen and (max-width: 768px) {
+  .navtab {
+    margin: 314px 0 30px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navtab {
+    margin: 212px 0 17px 0;
+  }
+}

@@ -9,3 +9,17 @@
   color: #000000;
   margin: 0 0 26px 0;
 }
+
+@media screen and (max-width: 768px) {
+  .tech__descriprion-title {
+    margin: 0 0 22px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .tech__descriprion-title {
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0 0 24px 0;
+  }
+}
