@@ -1,14 +1,15 @@
 .profile__text {
   font-family: "Inter", "Arial", sans-serif;
-  font-size: 11px;
   font-style: normal;
   font-weight: 400;
+  font-size: 11px;
   line-height: 13px;
   letter-spacing: 0px;
   color: #000;
   display: inline-block;
   justify-self: end;
   width: 205px;
+  margin: 0;
   padding: 17px 0;
   border-bottom: 1px solid #E8E8E8;
 }
@@ -19,4 +20,10 @@
 
 .profile__text:nth-of-type(4) {
   border-bottom: none;
+ }
+
+ @media screen and (max-width: 440px) {
+   .profile__text {
+     width: 130px;
+   }
  }

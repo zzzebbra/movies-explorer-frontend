@@ -7,3 +7,14 @@
   background-color: #FFFFFF;
 }
 
+@media screen and (max-width: 768px) {
+  .load-more {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .load-more {
+    max-width: 320px;
+  }
+}

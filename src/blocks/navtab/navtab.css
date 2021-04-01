@@ -11,7 +11,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   .navtab {
     margin: 212px 0 17px 0;
   }

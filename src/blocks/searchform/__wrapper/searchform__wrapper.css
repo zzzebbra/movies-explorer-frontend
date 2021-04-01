@@ -9,3 +9,15 @@
   margin: 0 auto;
   align-items: center;
 }
+
+@media screen and (max-width: 1166px) {
+  .searchform__wrapper {
+    max-width: 708px;
+  }
+}
+
+@media screen and (max-width: 702px) {
+  .searchform__wrapper {
+    max-width: 292px;
+  }
+}

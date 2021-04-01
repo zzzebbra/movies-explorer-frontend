@@ -1,0 +1,9 @@
+.form__submit-button_low-resolution {
+
+}
+
+@media screen and (max-width: 440px) {
+  .form__submit-button_low-resolution {
+    margin: 267px 0 14px 0;
+  }
+}

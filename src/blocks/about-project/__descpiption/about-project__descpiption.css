@@ -13,5 +13,6 @@
 @media screen and (max-width: 320px) {
   .about-project__descpiption {
     max-width: 284px;
+    flex-direction: column;
   }
 }

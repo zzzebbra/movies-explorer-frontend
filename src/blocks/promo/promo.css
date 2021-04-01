@@ -9,18 +9,32 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 0 auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1140px) {
   .promo {
-    max-width: 728px;
+    max-width: 768px;
     height: 834px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 790px) {
+  .promo {
+    max-width: 568px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .promo {
+    max-width: 468px;
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 490px) {
   .promo {
     max-width: 292px;
-    height: 286px;
+    height: 586px;
   }
 }

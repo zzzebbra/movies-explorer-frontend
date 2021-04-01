@@ -7,7 +7,7 @@ function Footer() {
         <p className="footer__credit-names">Учебный проект Яндекс.Практикум х BeatFilm.</p>
       </div>
       <div className="footer__copyright">
-        <p className="footer__copyright-text">© 2020</p>
+        <p className="footer__copyright-text footer__copyright-text_low-resolution">© 2020</p>
         <ul className="footer__copyright-list">
           <a href="#" className="footer__copyright-link"><p className="footer__copyright-text">Яндекс.Практикум</p></a>
           <a href="#" className="footer__copyright-link"><p className="footer__copyright-text">Github</p></a>

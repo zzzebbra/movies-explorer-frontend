@@ -5,3 +5,21 @@
   justify-content: center;
   flex-direction: column;
 }
+
+@media screen and (max-width: 768px) {
+  .login {
+    margin: 232px auto;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .login {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .login {
+    margin: 56px auto 30px auto;
+  }
+}

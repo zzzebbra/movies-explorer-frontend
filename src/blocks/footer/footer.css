@@ -5,3 +5,9 @@
   flex-direction: column;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 768px) {
+  .footer {
+    background-color: #FFF;
+  }
+}

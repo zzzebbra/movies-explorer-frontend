@@ -22,3 +22,27 @@
 .portfolio__link:focus {
   outline: none;
 }
+
+@media screen and (max-width: 1141px) {
+  .portfolio__link {
+    width: 668px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .portfolio__link {
+    max-width: 568px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .portfolio__link {
+    max-width: 468px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .portfolio__link {
+    max-width: 292px;
+  }
+}

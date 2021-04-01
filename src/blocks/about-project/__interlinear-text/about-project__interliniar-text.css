@@ -9,3 +9,10 @@
   color: #A0A0A0;
   margin: 14px 0 0 0;
 }
+
+@media screen and (max-width: 320px) {
+  .about-project__interlinear-text {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}

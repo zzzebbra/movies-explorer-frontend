@@ -31,15 +31,46 @@ function App() {
       text2="Сохранённые фильмы"
       buttonText="Войти"
       />
-    </Route>
       <Main />
-      {/* <Movies /> */}
-      {/* <SavedMovies /> */}
-      {/* <Profile username="Виталий" email="pochta@yandex.ru"/> */}
-      {/* <Register /> */}
-      {/* <Login /> */}
-      {/* <NotFound /> */}
+    </Route >
+
+    <Route exact path="/movies">
+      <Header
+        link="#"
+        buttonLink="#"
+        text="Регистрация"
+        text2="Сохранённые фильмы"
+        buttonText="Войти"
+        />
+      <Movies />
+    </Route >
+
+    <Route exact path="/saved-movies">
+      <SavedMovies />
+    </Route >
+
+    <Route exact path="/profile">
+      <Profile username="Виталий" email="pochta@yandex.ru"/>
+    </Route >
+
+    <Route exact path="/signup" >
+      <Register
+      link="/signin"/>
+    </Route >
+
+    <Route exact path="/signin">
+      <Login
+      link="/signup"
+      />
+    </Route >
+
+    {/* <Route path="/*">
+      <NotFound />
+    </Route > */}
+
+    <Route path="/">
       <Footer />
+    </Route >
     </CurrentUserContext.Provider>
     </div>
   )

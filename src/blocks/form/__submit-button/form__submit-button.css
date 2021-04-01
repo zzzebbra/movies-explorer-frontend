@@ -6,6 +6,10 @@
   color: #FFFFFF;
   border: none;
   font-family: "Inter", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  font-style: normal;
+  font-weight: 500;
   margin: 70px 0 16px 0;
 }
 
@@ -15,4 +19,13 @@
 
 .form__submit-button:hover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 440px) {
+  .form__submit-button {
+    width: 260px;
+    margin: 157px 0 14px 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
 }

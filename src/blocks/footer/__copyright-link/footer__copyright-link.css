@@ -7,3 +7,9 @@
 .footer__copyright-link:last-of-type {
   margin: 0;
 }
+
+@media screen and (max-width: 480px) {
+    .footer__copyright-link {
+      margin: 0;
+  }
+}

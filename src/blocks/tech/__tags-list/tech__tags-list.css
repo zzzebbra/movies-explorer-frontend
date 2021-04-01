@@ -7,6 +7,9 @@
 
 @media screen and (max-width: 320px) {
   .tech__tags-list {
-    width: 180px;
+    width: 188px;
+    display: flex;
+    align-self: center;
+    flex-wrap: wrap;
   }
 }
