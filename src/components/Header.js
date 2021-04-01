@@ -29,7 +29,7 @@ function Header(props) {
   if(windowWidth<=1166) {
     return (
       <div className="header">
-        <img className="logo" src={logo} alt="Логотип"/>
+        <Link to="/"><img className="logo" src={logo} alt="Логотип" onClick="/"/></Link>
         <button className="menu-button" onClick={handleVisible}></button>
         <div className="header__links-wrapper">
           <Link to={props.link} hidden = {isHidden} className="header__register-link"><p className="header__text">{props.text}</p></Link>
@@ -41,7 +41,7 @@ function Header(props) {
 
   return (
     <div className="header">
-      <img className="logo" src={logo} alt="Логотип"/>
+      <Link to="/"><img className="logo" src={logo} alt="Логотип"/></Link>
       <div className="header__links-wrapper">
         <Link to={props.link} className="header__register-link"><p className="header__text">{props.text}</p></Link>
         <button className="header__login-button"><Link to={props.buttonLink} className="header__login-link"><p className="header__text">{props.buttonText}</p></Link></button>
@@ -51,10 +51,10 @@ function Header(props) {
   // хэдэр при поиске фильмов
   // return (
   //   <div className="header">
-  //     <img className="logo" src={logo} alt="Логотип"/>
+  //     <Link to="/"><img className="logo" src={logo} alt="Логотип"/></Link>
   //     <div className="header__links-wrapper">
   //       <Link to={props.link} className="header__search-link"><p className="header__text">{props.text}</p></Link>
-  //       <Link to={props.link} className="header__saved-films-link"><p className="header__text header__text_inactive">{props.text2}</p></Link>
+  //       <Link to="saved-movies" className="header__saved-films-link"><p className="header__text header__text_inactive">{props.text2}</p></Link>
   //       <button className="header__profile-button"><Link to={props.buttonLink} className="header__profile-link"><p className="header__profile-button-text">{props.buttonText}</p></Link></button>
   //     </div>
   //   </div>

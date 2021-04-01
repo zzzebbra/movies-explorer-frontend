@@ -10,7 +10,7 @@ function Register(props) {
 
   return (
     <section className="register">
-      <img className="logo" src={logo} alt="Логотип"/>
+      <Link to="/"><img className="logo" src={logo} alt="Логотип"/></Link>
       <form className="form">
         <h1 className="form__title">{welcome}</h1>
         <p className="form__input-text">Имя</p>

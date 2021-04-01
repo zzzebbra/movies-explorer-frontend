@@ -10,7 +10,7 @@ function Login(props) {
 
   return (
     <section className="login">
-      <img className="logo" src={logo} alt="Логотип"/>
+      <Link to="/"><img className="logo" src={logo} alt="Логотип"/></Link>
       <form className="form">
         <h1 className="form__title">{title}</h1>
         <p className="form__input-text">E-mail</p>

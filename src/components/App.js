@@ -25,7 +25,7 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
     <Route exact path="/">
       <Header
-      link="#"
+      link="/signup"
       buttonLink="#"
       text="Регистрация"
       text2="Сохранённые фильмы"
@@ -36,7 +36,7 @@ function App() {
 
     <Route exact path="/movies">
       <Header
-        link="#"
+        link="/signup"
         buttonLink="#"
         text="Регистрация"
         text2="Сохранённые фильмы"
