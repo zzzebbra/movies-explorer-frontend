@@ -1,18 +1,13 @@
 import React from 'react';
 import MoviesCardList from './MoviesCardList';
-import SavedMoviesHeader from './SavedMoviesHeader';
 import LoadMore from './LoadMore';
+import SearchForm from './SearchForm';
+import deleteButton from '../images/delete-fav-film.svg';
 
 function SavedMovies(props) {
   return(
     <section className="saved-movies">
-      <SavedMoviesHeader
-        link="#"
-        buttonLink="#"
-        text="Регистрация"
-        text2="Сохранённые фильмы"
-        buttonText="Войти"
-      />
+      <SearchForm />
       <MoviesCardList />
       {/* <LoadMore /> */}
     </section>

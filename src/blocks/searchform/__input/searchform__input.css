@@ -13,6 +13,7 @@
 
 .searchform__input:focus {
   outline: none;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 320px) {

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.svg';
 import menuButton from '../images/burger-menu-icon.svg';
+import Navigation from './Navigation';
 
 function Header(props) {
 
@@ -29,12 +30,13 @@ function Header(props) {
   if(windowWidth<=1166) {
     return (
       <div className="header">
-        <Link to="/"><img className="logo" src={logo} alt="Логотип" onClick="/"/></Link>
+        <Link to="/"><img className="logo" src={logo} alt="Логотип"/></Link>
         <button className="menu-button" onClick={handleVisible}></button>
-        <div className="header__links-wrapper">
+        <Navigation hidden = {isHidden} onClick={handleVisible}/>
+        {/* <div className="header__links-wrapper">
           <Link to={props.link} hidden = {isHidden} className="header__register-link"><p className="header__text">{props.text}</p></Link>
-          <button hidden = {isHidden} className="header__login-button"><Link to={props.buttonLink} className="header__login-link"><p className="header__text">{props.buttonText}</p></Link></button>
-        </div>
+          <button  className="header__login-button"><Link to={props.buttonLink} className="header__login-link"><p className="header__text">{props.buttonText}</p></Link></button>
+        </div> */}
       </div>
     )
   }

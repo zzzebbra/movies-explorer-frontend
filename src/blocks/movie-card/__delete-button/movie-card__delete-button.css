@@ -1,7 +1,7 @@
-.movie-card__like {
-  background: url(../../../images/like.svg);
-  width: 14px;
-  height: 14px;
+.movie-card__delete-button {
+  background: url(../../../images/delete-fav-film.svg);
+  width: 12px;
+  height: 12px;
   border: none;
   background-repeat: no-repeat;
   background-position: center;
@@ -10,11 +10,11 @@
   grid-column: 2;
 }
 
-.movie-card__like:focus {
+.movie-card__delete-button:focus {
   outline: none;
 }
 
-.movie-card__like:hover {
+.movie-card__delete-button:hover {
   cursor: pointer;
   opacity: 0.8;
 }

@@ -7,6 +7,7 @@
   width: 34px;
   height: 34px;
   background-position: center;
+  padding: 20px;
 }
 
 .searchform__icon:focus {
@@ -15,6 +16,7 @@
 
 .searchform__icon:hover {
   cursor: pointer;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 320px) {

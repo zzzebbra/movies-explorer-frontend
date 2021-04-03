@@ -1,6 +1,6 @@
 .movie-card__img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   grid-row: 1;
   grid-column: 1/3;
 }

@@ -78,6 +78,7 @@
 @import url(./blocks/movie-card/__img/movie-card__img.css);
 @import url(./blocks/movie-card/__title/movie-card__title.css);
 @import url(./blocks/movie-card/__like/movie-card__like.css);
+@import url(./blocks/movie-card/__delete-button/movie-card__delete-button.css);
 @import url(./blocks/movie-card/__duration/movie-card__duration.css);
 @import url(./blocks/preloader/preloader.css);
 @import url(./blocks/preloader/__container/preloader__container.css);
@@ -110,3 +111,13 @@
 @import url(./blocks/not-found/__link/not-found__link.css);
 @import url(./blocks/not-found/__subtitle/not-found__subtitle.css);
 @import url(./blocks/not-found/__title/not-found__title.css);
+@import url(./blocks/navigation/navigation.css);
+@import url(./blocks/navigation/_open/navigation_open.css);
+@import url(./blocks/navigation/__container/navigation__container.css);
+@import url(./blocks/navigation/__list/navigation__list.css);
+@import url(./blocks/navigation/__close-button/navigation__close-button.css);
+@import url(./blocks/navigation/__button/navigation__button.css);
+@import url(./blocks/navigation/__link/_active/navigation__link_active.css);
+@import url(./blocks/navigation/__link/navigation__link.css);
+@import url(./blocks/navigation/__account-button/navigation__account-button.css);
+

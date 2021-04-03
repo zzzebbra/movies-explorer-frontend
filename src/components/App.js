@@ -11,6 +11,7 @@ import Movies from './Movies';
 import SavedMovies from './SavedMovies';
 import Profile from './Profile';
 import NotFound from './NotFound';
+import Navigation from './Navigation';
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState({});
@@ -26,7 +27,6 @@ function App() {
     <Route exact path="/">
       <Header
       link="/signup"
-      buttonLink="#"
       text="Регистрация"
       text2="Сохранённые фильмы"
       buttonText="Войти"
@@ -46,6 +46,13 @@ function App() {
     </Route >
 
     <Route exact path="/saved-movies">
+    <Header
+        link="/signup"
+        buttonLink="#"
+        text="Регистрация"
+        text2="Сохранённые фильмы"
+        buttonText="Войти"
+        />
       <SavedMovies />
     </Route >
 

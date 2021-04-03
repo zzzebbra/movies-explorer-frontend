@@ -9,6 +9,7 @@ function SearchForm() {
       <div className="searchform__wrapper">
         <button className="searchform__icon"></button>
         <input
+        required="true"
         className="searchform__input"
         type="text"
         placeholder="Фильм"
