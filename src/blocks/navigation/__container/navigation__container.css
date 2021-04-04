@@ -7,3 +7,9 @@
   width: 70%;
   height: 100vh;
 }
+
+@media screen and (max-width: 480px) {
+  .navigation__container {
+    width: 100%;
+  }
+}

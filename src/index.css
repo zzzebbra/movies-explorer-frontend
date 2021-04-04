@@ -78,6 +78,7 @@
 @import url(./blocks/movie-card/__img/movie-card__img.css);
 @import url(./blocks/movie-card/__title/movie-card__title.css);
 @import url(./blocks/movie-card/__like/movie-card__like.css);
+@import url(./blocks/movie-card/__like/_active/movie-card__like_active.css);
 @import url(./blocks/movie-card/__delete-button/movie-card__delete-button.css);
 @import url(./blocks/movie-card/__duration/movie-card__duration.css);
 @import url(./blocks/preloader/preloader.css);
