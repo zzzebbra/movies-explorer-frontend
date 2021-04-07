@@ -12,7 +12,7 @@ function Footer() {
         <ul className="footer__copyright-list">
           <Link to="https://praktikum.yandex.ru/" className="footer__copyright-link"><p className="footer__copyright-text">Яндекс.Практикум</p></Link>
           <Link to="https://github.com/zzzebbra" className="footer__copyright-link"><p className="footer__copyright-text">Github</p></Link>
-          <Link to="ru-ru.facebook.com" className="footer__copyright-link"><p className="footer__copyright-text">Facebook</p></Link>
+          <Link to="https://ru-ru.facebook.com/" className="footer__copyright-link"><p className="footer__copyright-text">Facebook</p></Link>
         </ul>
       </div>
     </section>
