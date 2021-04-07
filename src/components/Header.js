@@ -27,7 +27,7 @@ function Header(props) {
   })
 
   // хэдэр при бургер-меню (недоделан)
-  if(windowWidth<=1166) {
+  if(windowWidth<=768) {
     return (
       <div className="header">
         <Link to="/"><img className="logo" src={logo} alt="Логотип"/></Link>
@@ -35,7 +35,7 @@ function Header(props) {
         <Navigation hidden = {isHidden} onClick={handleVisible}/>
         {/* <div className="header__links-wrapper">
           <Link to={props.link} hidden = {isHidden} className="header__register-link"><p className="header__text">{props.text}</p></Link>
-          <button  className="header__login-button"><Link to={props.buttonLink} className="header__login-link"><p className="header__text">{props.buttonText}</p></Link></button>
+          <Link to={props.buttonLink} className="header__login-link"><p className="header__text">{props.buttonText}</p></Link>
         </div> */}
       </div>
     )
@@ -46,7 +46,7 @@ function Header(props) {
       <Link to="/"><img className="logo" src={logo} alt="Логотип"/></Link>
       <div className="header__links-wrapper">
         <Link to={props.link} className="header__register-link"><p className="header__text">{props.text}</p></Link>
-        <button className="header__login-button"><Link to="/signin" className="header__login-link"><p className="header__text">{props.buttonText}</p></Link></button>
+        <Link to="/signin" className="header__login-link"><p className="header__text">{props.buttonText}</p></Link>
       </div>
     </div>
   )

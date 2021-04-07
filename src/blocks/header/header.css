@@ -9,15 +9,34 @@
   padding: 0 50px;
 }
 
-@media screen and (max-width: 1166px) {
+ @media screen and (max-width: 1166px) {
   .header {
     max-width: 768px;
   }
 }
 
+@media screen and (max-width: 768px) {
+  .header {
+    max-width: 728px;
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .header {
+    padding: 0 30px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .header {
-    margin: 18px auto;
+    margin: 18px 0;
     padding: 0 14px;
   }
 }

@@ -4,7 +4,7 @@ import MoviesCard from './MoviesCard';
 function MoviesCardList(params) {
   return (
     <section className="movies-card-list">
-      <MoviesCard />
+      <MoviesCard class="movie-card__like_active"/>
       <MoviesCard />
       <MoviesCard />
       <MoviesCard />

@@ -8,6 +8,7 @@
   background: #fff;
   border-left: none;
   border-right: none;
+  text-decoration: none;
 }
 
 .portfolio__link:last-of-type {

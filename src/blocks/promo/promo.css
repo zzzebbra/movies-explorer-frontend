@@ -12,6 +12,12 @@
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1220px) {
+  .promo {
+    max-width: 1140px;
+  }
+}
+
 @media screen and (max-width: 1140px) {
   .promo {
     max-width: 768px;
@@ -20,6 +26,12 @@
 }
 
 @media screen and (max-width: 790px) {
+  .promo {
+    max-width: 728px;
+  }
+}
+
+@media screen and (max-width: 728px) {
   .promo {
     max-width: 568px;
   }
