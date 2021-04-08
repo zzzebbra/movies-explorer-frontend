@@ -1,0 +1,25 @@
+.register {
+  max-width: 400px;
+  margin: 70px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .register {
+    margin: 232px auto;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .register {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .register {
+    margin: 56px auto 30px auto;
+  }
+}

@@ -1,0 +1,21 @@
+.about-project__graphic {
+  display: flex;
+  max-width: 1140px;
+  margin: 110px auto 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .about-project__graphic {
+    max-width: 668px;
+    margin: 93px auto 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about-project__graphic {
+    max-width: 284px;
+    margin: 60px auto 0;
+  }
+}

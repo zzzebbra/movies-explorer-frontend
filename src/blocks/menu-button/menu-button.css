@@ -1,0 +1,13 @@
+.menu-button {
+  border: none;
+  background: url(../../images/burger-menu-icon.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 44px;
+  width: 44px;
+}
+
+.menu-button:focus {
+  outline: none;
+}

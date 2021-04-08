@@ -1,0 +1,20 @@
+.about-project {
+  max-width: 1140px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  padding: 110px 0;
+}
+
+@media screen and (max-width: 1140px) {
+  .about-project {
+    max-width: 668px;
+    padding: 90px 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .about-project {
+    max-width: 320px;
+    padding: 70px 0;
+  }
+}

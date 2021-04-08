@@ -1,0 +1,20 @@
+.movie-card__like {
+  background: url(../../../images/like.svg);
+  width: 14px;
+  height: 14px;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.movie-card__like:focus {
+  outline: none;
+}
+
+.movie-card__like:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

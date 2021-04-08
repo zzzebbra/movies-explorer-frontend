@@ -1,0 +1,27 @@
+.footer__copyright {
+  width: 1140px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 1145px) {
+  .footer__copyright {
+    width: 668px;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .footer__copyright {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer__copyright {
+    display: grid;
+    justify-content: center;
+  }
+}

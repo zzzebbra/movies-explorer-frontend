@@ -1,0 +1,22 @@
+.about-project__duration-back {
+  height: 36px;
+  width: 228px;
+  background: #2BE080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1140px) {
+  .about-project__duration-back {
+    height: 36px;
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .about-project__duration-back {
+    height: 35px;
+    width: 100px;
+  }
+}

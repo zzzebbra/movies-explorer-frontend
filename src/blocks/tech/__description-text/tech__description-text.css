@@ -1,0 +1,25 @@
+.tech__description-text {
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: black;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .tech__description-text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .tech__description-text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}

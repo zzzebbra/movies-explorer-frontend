@@ -1,0 +1,11 @@
+.header__text {
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  margin: 0;
+  color: black;
+  text-align: center;
+  padding: 8px;
+}

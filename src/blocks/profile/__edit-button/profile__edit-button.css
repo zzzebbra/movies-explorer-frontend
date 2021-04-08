@@ -1,0 +1,16 @@
+.profile__edit-button {
+  font-family: "Inter", "Arial", sans-serif;
+  color: #000;
+  border: none;
+  background-color: #fff;
+  margin-bottom: 16px;
+}
+
+.profile__edit-button:focus {
+  outline: none;
+}
+
+.profile__edit-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

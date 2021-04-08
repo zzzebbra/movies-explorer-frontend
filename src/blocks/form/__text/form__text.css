@@ -1,0 +1,17 @@
+.form__text {
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  color: #A0A0A0;
+  text-align: center;
+  margin: 0;
+}
+
+@media screen and (max-width: 440px) {
+  .form__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

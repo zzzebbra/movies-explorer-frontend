@@ -1,0 +1,26 @@
+.about-project__descpiption-text {
+  max-width: 550px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .about-project__descpiption-text {
+    max-width: 319px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about-project__descpiption-text {
+    max-width: 284px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+}

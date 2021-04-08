@@ -1,0 +1,26 @@
+.profile__buttons {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 220px 0 0 0;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__buttons {
+    margin: 210px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile__buttons {
+    margin: 379px 0 0 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

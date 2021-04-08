@@ -1,0 +1,21 @@
+.about-project__interlinear-front {
+  height: 36px;
+  width: 912px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1140px) {
+  .about-project__interlinear-front {
+    width: 528px;
+    height: 36px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .about-project__interlinear-front {
+    width: 184px;
+    height: 35px;
+  }
+}
