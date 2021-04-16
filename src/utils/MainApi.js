@@ -1,5 +1,5 @@
-// const baseUrl = "http://zzzebbra.students.nomoredomains.rocks";
-const baseUrl = 'http://localhost:3000';
+const baseUrl = "http://zzzebbra.students.nomoredomains.rocks";
+//const baseUrl = 'http://localhost:3000';
 
 const handleOriginalResponse = (res) => {
   if (!res.ok) {
