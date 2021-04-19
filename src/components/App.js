@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
-import  '../index.css';
+import '../index.css';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
@@ -13,6 +13,8 @@ import Profile from './Profile';
 import NotFound from './NotFound';
 import ProtectedRoute from './ProtectedRoute';
 import mainApi from '../utils/MainApi';
+import moviesApi from '../utils/MoviesApi';
+import InfoTooltip from './InfoTooltip';
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState({});
@@ -20,11 +22,13 @@ function App() {
   const [loggedUser, setLoggedUser] = React.useState({});
   const [movies, setMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
+  const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = React.useState(false);
+  const [operationStatus, setOperationStatus] = React.useState(false);
 
   const history = useHistory();
 
   function moviesConverter(movies) {
-    return(
+    return (
       movies.map((movie) => {
         return {
           nameRU: movie.nameRU || "",
@@ -44,34 +48,35 @@ function App() {
 
   React.useEffect(() => {
     if (localStorage.getItem('token')) {
-      mainApi.getUserInfo(localStorage.getItem('token')).then((res) => onAuth(res));
-      mainApi.getUserInfo(localStorage.getItem('token'))
-        .then((res) => {
-          setCurrentUser(res.data);
+      mainApi.getUserInfo(localStorage.getItem('token')).then((res) => { onAuth(res); setCurrentUser(res.data) })
+        .then(() => {
+          if (localStorage.getItem('localMovies')) { setMovies(JSON.parse(localStorage.getItem('localMovies'))) }
+          else { moviesApi.getMovies().then((res) => { setMovies(res) }) }
         })
-      .then(() => {
-       if(localStorage.getItem('localMovies')) { setMovies(JSON.parse(localStorage.getItem('localMovies')))}
-      })
-    }
-      mainApi.getSavedMovies(localStorage.getItem('token'))
-      .then((res) => {
-        setSavedMovies(res.data);
-      });
-  }, [isLoggedIn]);
 
+      mainApi.getSavedMovies(localStorage.getItem('token'))
+        .then((res) => {
+          setSavedMovies(res.data);
+        });
+    }
+  }, [isLoggedIn]);
 
 
   function handleLoggedIn() {
     setIsLoggedIn(true);
   }
 
-  function register({ name, email, password  }) {
-    mainApi.signup(name, email, password )
+  function openInfoTooltip() {
+    setIsInfoTooltipPopupOpen(true);
+  }
+
+  function register({ name, email, password }) {
+    mainApi.signup(name, email, password)
       .then((res) => {
-        //if (res.data) { setOperationStatus(true); } else { setOperationStatus(false);  };
         login({ email, password });
       })
-      .catch((err) => { console.log(err) });
+      .then((res) => { if (res.data) { setOperationStatus(true); openInfoTooltip(); } else { setOperationStatus(false); openInfoTooltip(); } })
+      .catch((err) => { setOperationStatus(false); openInfoTooltip(); });
   }
 
   function onAuth(res) {
@@ -81,13 +86,13 @@ function App() {
   }
 
   function login({ email, password }) {
-    mainApi.login(email, password )
+    mainApi.login(email, password)
       .then((res) => {
         localStorage.setItem('token', res.token);
         mainApi.getUserInfo(res.token)
           .then((res) => { onAuth(res); });
       })
-      .catch((err) => { console.log(err)  });
+      .catch((err) => { setOperationStatus(false); openInfoTooltip(); });
   }
 
   function onLogout() {
@@ -98,14 +103,21 @@ function App() {
     history.push('/')
   }
 
-  function handleUpdateUser(props) {
-    mainApi.setUserInfo(localStorage.getItem('token'), props.username, props.email)
-      .then((res) => {
-        setCurrentUser(res.data);
-      });
+  function closePopup() {
+    setIsInfoTooltipPopupOpen(false);
   }
 
-  return(
+  function handleUpdateUser(props) {
+    mainApi.setUserInfo(localStorage.getItem('token'), props.name, props.email)
+      .then((res) => { if (res.ok) { setOperationStatus(true); openInfoTooltip(); } else { setOperationStatus(false); openInfoTooltip(); } })
+      .then((res) => {
+        setCurrentUser(res.data);
+      })
+
+      .catch((err) => { setOperationStatus(false); openInfoTooltip(); });
+  }
+
+  return (
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
         <Route exact path="/">
@@ -116,39 +128,42 @@ function App() {
             buttonText="Войти"
           />
           <Main />
+          <Footer />
         </Route>
 
         <Switch>
           <ProtectedRoute path="/movies"
-          loggedIn={isLoggedIn}
-          component={Header}
-          link="/saved-movies"
-          buttonLink="/profile"
-          text="Фильмы"
-          saved="Сохранённые фильмы"
-          buttonText="Аккаунт"
-          inactiveSavedFilmsClass="header__text_inactive"
-          component2={Movies}
-          movies={movies}
-          setMovies={setMovies}
-          moviesConverter={moviesConverter}
-          savedMovies={savedMovies}
-          setSavedMovies={setSavedMovies}
+            loggedIn={isLoggedIn}
+            component={Header}
+            link="/movies"
+            buttonLink="/profile"
+            text="Фильмы"
+            saved="Сохранённые фильмы"
+            buttonText="Аккаунт"
+            inactiveSavedFilmsClass="header__text_inactive"
+            component2={Movies}
+            movies={movies}
+            setMovies={setMovies}
+            moviesConverter={moviesConverter}
+            savedMovies={savedMovies}
+            setSavedMovies={setSavedMovies}
+            component3={Footer}
           >
           </ProtectedRoute >
 
           <ProtectedRoute path="/saved-movies"
-          component={Header}
-          loggedIn={isLoggedIn}
-          link="/movies"
-          buttonLink="/profile"
-          text="Фильмы"
-          saved="Сохранённые фильмы"
-          buttonText="Аккаунт"
-          inactiveFilmsClass="header__text_inactive"
-          component2={SavedMovies}
-          savedMovies={savedMovies}
-          setSavedMovies={setSavedMovies}
+            component={Header}
+            loggedIn={isLoggedIn}
+            link="/movies"
+            buttonLink="/profile"
+            text="Фильмы"
+            saved="Сохранённые фильмы"
+            buttonText="Аккаунт"
+            inactiveFilmsClass="header__text_inactive"
+            component2={SavedMovies}
+            savedMovies={savedMovies}
+            setSavedMovies={setSavedMovies}
+            component3={Footer}
           >
           </ProtectedRoute >
 
@@ -162,13 +177,14 @@ function App() {
               buttonText="Аккаунт"
               inactiveSavedFilmsClass="header__text_inactive"
               inactiveFilmsClass="header__text_inactive"
-              />
+            />
             <Profile
               username={loggedUser.name}
               email={loggedUser.email}
               onClick={onLogout}
               onEdit={handleUpdateUser}
             />
+            <Footer />
           </Route >
 
           <Route path="/signup" >
@@ -189,20 +205,22 @@ function App() {
               title="Рады видеть!"
               button="Войти"
               text="Ещё не зарегистрированы? "
-              link_text = "Регистрация"
+              link_text="Регистрация"
               onSubmit={login}
               handleLogin={handleLoggedIn}
             />
           </Route >
+
+          <Route path="/*" component={NotFound}>
+          </Route >
         </Switch>
-
-        {/* <Route path="/*">
-          <NotFound />
-        </Route > */}
-
-        <Route path="/">
-          <Footer />
-        </Route >
+        <InfoTooltip
+          image=""
+          text=""
+          isOpen={isInfoTooltipPopupOpen}
+          operationStatus={operationStatus}
+          onClose={closePopup}
+        />
       </CurrentUserContext.Provider>
     </div>
   )

@@ -3,12 +3,13 @@ import { Route, Redirect } from 'react-router-dom';
 
 // этот компонент принимает другой 2 компонент в качестве пропса
 // он также может взять неограниченное число пропсов и передать их новому компоненту
-function ProtectedRoute ({ component: Component, component2: Component2, ...props })
+function ProtectedRoute ({ component: Component, component2: Component2, component3: Component3, ...props })
 {
   return(
   <Route>
     {  (props.loggedIn ? <Component {...props} /> : <Redirect to="/signin" />) }
     {  (props.loggedIn ? <Component2 {...props} /> : <Redirect to="/signin" />) }
+    {  (props.loggedIn ? <Component3 {...props} /> : <Redirect to="/signin" />) }
   </Route>
   )
 };

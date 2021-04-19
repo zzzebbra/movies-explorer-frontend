@@ -5,6 +5,7 @@ import MoviesCard from './MoviesCard';
 const baseUrl = "https://api.nomoreparties.co";
 
 function MoviesCardList(props) {
+
   function onCardLike(card, isLiked) {
     if (isLiked) {
       mainApi.getSavedMovies(localStorage.getItem('token')).then((res) => {
@@ -16,7 +17,7 @@ function MoviesCardList(props) {
             props.setSavedMovies(res.data);
           }))
     }
-    else{
+    else {
     mainApi.addSavedMovie(localStorage.getItem('token'), card.country, card.director, card.duration, card.year, card.description, `${baseUrl}${card.image.url}`, card.trailerLink, `${baseUrl}${card.image.formats.thumbnail.url}`, card.owner, card.movieId, card.nameRU, card.nameEN)
       .then(() =>
         mainApi.getSavedMovies(localStorage.getItem('token'))
@@ -35,6 +36,9 @@ function MoviesCardList(props) {
           props.setSavedMovies(res.data);
         }))
   }
+
+
+
   const movies = props.movies;
 
     return (

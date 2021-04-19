@@ -23,6 +23,7 @@ function Register(props) {
   const nameRef = React.useRef();
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
+
   const [formValues, setFormValues] = React.useState({
     userName: '',
     email: '',
@@ -53,47 +54,68 @@ function Register(props) {
     setFormValues(prevState => ({ ...prevState, [name]: value }));
   }, [setFormValues]);
 
-  React.useEffect(function validateInputs() {
-    const { userName, email, password } = formValues;
+  React.useEffect(
+    function validateInputs() {
 
-    const userNameValidationResult = Object.keys(validators.userName).map(
-      errorKey => {
-        const errorResult = validators.userName[errorKey](userName);
+      const { userName, email, password } = formValues;
 
-        return { [errorKey]: errorResult }
+      if (!formValues.email && !formValues.password && !formValues.userName) {
+        setErrors({
+          userName: {
+            required: false,
+            minLength: false,
+            noNumbers: false,
+          },
+          email: {
+            required: false,
+            minLength: false,
+            isEmail: false,
+          },
+          password: {
+            required: false,
+            minLength: false,
+          }
+        })
       }
-    ).reduce((accumulator, element) => ({ ...accumulator, ...element }), {} );
+      else {
+        const userNameValidationResult = Object.keys(validators.userName).map(
+          errorKey => {
+            const errorResult = validators.userName[errorKey](userName);
 
-    const emailValidationResult = Object.keys(validators.email).map(
-      errorKey => {
-        const errorResult = validators.email[errorKey](email);
+            return { [errorKey]: errorResult }
+          }
+        ).reduce((accumulator, element) => ({ ...accumulator, ...element }), {});
 
-        return { [errorKey]: errorResult }
+        const emailValidationResult = Object.keys(validators.email).map(
+          errorKey => {
+            const errorResult = validators.email[errorKey](email);
+
+            return { [errorKey]: errorResult }
+          }
+        ).reduce((accumulator, element) => ({ ...accumulator, ...element }), {});
+
+        const passwordValidationResult = Object.keys(validators.password).map(
+          errorKey => {
+            const errorResult = validators.password[errorKey](password);
+
+            return { [errorKey]: errorResult }
+          }
+        ).reduce((accumulator, element) => ({ ...accumulator, ...element }), {});
+
+        setErrors({
+          userName: userNameValidationResult,
+          email: emailValidationResult,
+          password: passwordValidationResult
+        });
       }
-    ).reduce((accumulator, element) => ({ ...accumulator, ...element }), {} );
-
-    const passwordValidationResult = Object.keys(validators.password).map(
-      errorKey => {
-        const errorResult = validators.password[errorKey](password);
-
-        return { [errorKey]: errorResult }
-      }
-    ).reduce((accumulator, element) => ({ ...accumulator, ...element }), {} );
-
-    setErrors({
-      userName: userNameValidationResult,
-      email: emailValidationResult,
-      password: passwordValidationResult
-    });
-
-  }, [formValues, setErrors]);
+    }, [formValues, setErrors]);
 
   const { userName, email, password } = formValues;
 
   const isUserNameInvalid = Object.values(errors.userName).some(Boolean);
   const isEmailInvalid = Object.values(errors.email).some(Boolean);
   const isPasswordInvalid = Object.values(errors.password).some(Boolean);
-  const isSubmitDisabled = isUserNameInvalid || isEmailInvalid || isPasswordInvalid;
+  const isSubmitDisabled = isUserNameInvalid || isEmailInvalid || isPasswordInvalid || !( formValues.userName && formValues.email && formValues.password)
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -106,7 +128,7 @@ function Register(props) {
 
   return (
     <section className="register">
-      <Link to="/"><img className="logo" src={logo} alt="Логотип"/></Link>
+      <Link to="/"><img className="logo" src={logo} alt="Логотип" /></Link>
       <form className="form" onSubmit={handleSubmit}>
         <h1 className="form__title">{props.title}</h1>
         <p className="form__input-text">Имя</p>
@@ -119,9 +141,9 @@ function Register(props) {
           value={userName}
           required
         />
-        { errors.userName.required && <p className="form__error">Обязательное поле</p> }
-        { errors.userName.minLength && <p className="form__error">Поле должно быть не короче 2 символов</p> }
-        { errors.userName.noNumbers && <p className="form__error">Поле не может содержать цифры</p> }
+        {errors.userName.required && <p className="form__error">Обязательное поле</p>}
+        {errors.userName.minLength && <p className="form__error">Поле должно быть не короче 2 символов</p>}
+        {errors.userName.noNumbers && <p className="form__error">Поле не может содержать цифры</p>}
         <p className="form__input-text">E-mail</p>
         <input
           className="form__input"
@@ -132,9 +154,9 @@ function Register(props) {
           value={email}
           required
         />
-        { errors.email.required && <p className="form__error">Обязательное поле</p> }
-        { errors.email.minLength && <p className="form__error">Поле должно быть не короче 5 символов</p> }
-        { errors.email.isEmail && <p className="form__error">Адрес электронной почты должен содержать символ "@" и постфикс доменной зоны (".ru", ".com", и т.д.)</p> }
+        {errors.email.required && <p className="form__error">Обязательное поле</p>}
+        {errors.email.minLength && <p className="form__error">Поле должно быть не короче 5 символов</p>}
+        {errors.email.isEmail && <p className="form__error">Адрес электронной почты должен содержать символ "@" и постфикс доменной зоны (".ru", ".com", и т.д.)</p>}
         <p className="form__input-text">Пароль</p>
         <input
           className="form__input"
@@ -145,9 +167,9 @@ function Register(props) {
           value={password}
           required
         />
-        { errors.password.required && <p className="form__error">Обязательное поле</p> }
-        { errors.password.minLength && <p className="form__error">Поле должно быть не короче 8 символов</p> }
-        <button disabled={isSubmitDisabled} className={ `${isSubmitDisabled ? 'form__submit-button form__submit-button_disabled': 'form__submit-button'}` }>{props.button}</button>
+        {errors.password.required && <p className="form__error">Обязательное поле</p>}
+        {errors.password.minLength && <p className="form__error">Поле должно быть не короче 8 символов</p>}
+        <button disabled={isSubmitDisabled} className={`${isSubmitDisabled ? 'form__submit-button form__submit-button_disabled' : 'form__submit-button'}`}>{props.button}</button>
         <p className="form__text">{props.text}<Link to={props.link} className="form__link">{props.link_text}</Link></p>
       </form>
 
