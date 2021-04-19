@@ -1,10 +1,11 @@
 import React from 'react';
 
-function FilterCheckbox() {
+function FilterCheckbox(props) {
+
   return(
     <section className="filter-checkbox">
-      <input type="checkbox" id="checkbox" className="filter-checkbox__switcher"></input>
-      <label for="checkbox" className="filter-checkbox__switcher-label">Короткометражки</label>
+      <input onClick={props.onClick} type="checkbox" id="checkbox" className="filter-checkbox__switcher"></input>
+      <label htmlFor="checkbox" className="filter-checkbox__switcher-label">Короткометражки</label>
     </section>
   )
 }
