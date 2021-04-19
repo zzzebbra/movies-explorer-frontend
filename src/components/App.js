@@ -74,8 +74,9 @@ function App() {
     mainApi.signup(name, email, password)
       .then((res) => {
         login({ email, password });
+        if (res.data) { setOperationStatus(true); openInfoTooltip(); } else { setOperationStatus(false); openInfoTooltip(); }
       })
-      .then((res) => { if (res.data) { setOperationStatus(true); openInfoTooltip(); } else { setOperationStatus(false); openInfoTooltip(); } })
+      .then((res) => {  })
       .catch((err) => { setOperationStatus(false); openInfoTooltip(); });
   }
 
@@ -109,11 +110,10 @@ function App() {
 
   function handleUpdateUser(props) {
     mainApi.setUserInfo(localStorage.getItem('token'), props.name, props.email)
-      .then((res) => { if (res.ok) { setOperationStatus(true); openInfoTooltip(); } else { setOperationStatus(false); openInfoTooltip(); } })
       .then((res) => {
         setCurrentUser(res.data);
+        if (res.data) { setOperationStatus(true); openInfoTooltip(); } else { setOperationStatus(false); openInfoTooltip(); }
       })
-
       .catch((err) => { setOperationStatus(false); openInfoTooltip(); });
   }
 

@@ -3,7 +3,7 @@ import success from '../images/done.svg';
 import error from '../images/error.svg';
 
 function InfoTooltip(props) {
-  if (!props.operationStatus) {
+  if (props.operationStatus) {
     return (
       <div className={`popup ${props.isOpen ? 'popup_opened' : ''}`}>
         <div className="info-tooltip">
