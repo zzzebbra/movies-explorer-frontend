@@ -1,23 +1,27 @@
 import React from 'react';
 
-function SearchForm() {
+function SearchForm(props) {
 
-  const [movie, setMovie] = React.useState('');
+  const [searchString, setSearchString] = React.useState('');
 
+  function onClick(evt) {
+    evt.preventDefault();
+    props.onSearchClick(searchString)
+  }
   return (
     <section className="searchform">
-      <div className="searchform__wrapper">
+      <form onSubmit={onClick} className="searchform__wrapper" >
         <button className="searchform__icon"></button>
         <input
-        required="true"
+        required={true}
         className="searchform__input"
         type="text"
         placeholder="Фильм"
-        value={movie}
-        onChange={(evt) => setMovie(evt.target.value)}
+        value={searchString}
+        onChange={(evt) => setSearchString(evt.target.value)}
         ></input>
-        <button className="searchform__button">Найти</button>
-      </div>
+        <button type="submit" onClick={onClick} className="searchform__button">Найти</button>
+      </form>
     </section>
   )
 }
